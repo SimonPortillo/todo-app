@@ -1,0 +1,223 @@
+/* Light Theme Variables */
+:root {
+    --background-color: #F0F7F4;
+    --text-color: #32292F;
+    --border-color: #ccc;
+    --button-bg-color: #70ABAF;
+    --button-text-color: #fff;
+    --button-hover-bg-color: #99E1D9;
+    --description-color: #aaa;
+}
+
+/* Dark Theme Variables */
+body.dark-mode {
+    --background-color: #333;
+    --text-color: #fff;
+    --border-color: #555;
+    --button-bg-color: #99E1D9;
+    --button-text-color: #fff;
+    --button-hover-bg-color: #70ABAF;
+    --description-color: #aaa;
+}
+
+html {
+    font-family: "Varela Round", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+body {
+    margin: 20px;
+    font-family: inherit;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.todo-container {
+    padding-top: 100px;
+    max-width: 600px;
+    margin: 0 auto;
+    font-family: inherit;
+    text-align: center; /* Center the heading */
+}
+
+.todo-container h1 {
+    text-align: center; /* Ensure the heading is centered */
+    margin-bottom: 20px; /* Added margin-bottom for spacing */
+}
+
+.todo-input, .search-bar {
+    width: 80%;
+    padding: 14px;
+    border: 1px solid var(--border-color);
+    border-radius: 25px;
+    margin-bottom: 10px; /* Adjusted margin-bottom for spacing */
+    box-sizing: border-box;
+    font-family: inherit;
+    margin: auto; /* Center the input fields */
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.todo-input:focus, .search-bar:focus {
+    outline: none;
+    border-color: var(--button-bg-color);
+    transition: 0.3s ease-in-out;
+}
+
+.search-bar.hidden {
+    background-color: red;
+}
+
+.input-with-button {
+    display: flex;
+    align-items: center;
+    width: 80%;
+    margin: 20px auto 10px auto; /* Added top margin for vertical spacing */
+}
+
+.input-with-button .todo-input {
+    flex: 1;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.input-with-button button {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    padding: 10px 15px;
+    border: 1px solid var(--border-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    background-color: var(--button-bg-color);
+    color: var(--button-text-color);
+}
+
+.input-with-button button:hover,
+.input-with-button button:focus {
+    background-color: var(--button-hover-bg-color);
+    color: var(--button-text-color);
+    border-color: var(--button-hover-bg-color);
+}
+
+.todo-list {
+    list-style-type: none;
+    padding: 0;
+    font-family: inherit;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center; /* Center the to-do elements */
+}
+
+.todo-item {
+    display: flex;
+    flex-direction: column; /* Change to column to allow description on a new line */
+    justify-content: space-between;
+    align-items: flex-start; /* Align items to the start */
+    padding: 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: var(--background-color);
+    font-family: inherit;
+    transition: transform 0.2s ease-in-out, max-height 0.3s ease;
+    width: 100%; /* Ensure the to-do items take full width */
+    max-width: 600px; /* Set a maximum width for the to-do items */
+    transition: 0.1s;
+    cursor: pointer;
+    overflow: hidden;
+    max-height: 60px; /* Initial height */
+}
+
+.todo-item.expanded {
+    max-height: 200px; /* Expanded height */
+}
+
+.todo-item.dragging {
+    opacity: 0.5;
+    background-color: var(--background-color);
+    border: 2px dashed var(--border-color);
+}
+
+.todo-item:hover {
+    scale: 1.02;
+}
+
+.todo-item .description {
+    margin-top: 5px;
+    font-size: 14px;
+    color: var(--description-color);
+    width: 100%;
+}
+
+.todo-item .header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center; /* Center the header content vertically */
+}
+
+.todo-item .toggle-button {
+    margin-left: 5px;
+    padding: 10px;
+    border: none;
+    border-radius: 50%;
+    background-color: transparent;
+    color: #007BFF;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-family: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.todo-item .toggle-button span.material-symbols-outlined {
+    font-size: 24px;
+}
+
+.todo-item .toggle-button:hover {
+    background-color: #007BFF;
+    color: white;
+}
+
+.todo-item .buttons {
+    display: flex;
+    gap: 5px;
+}
+
+.completed {
+    text-decoration: line-through;
+    color: gray;
+}
+
+button {
+    margin-left: 5px;
+    padding: 10px;
+    border: none;
+    border-radius: 50%;
+    background-color: transparent;
+    color: var(--button-bg-color);
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-family: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button span.material-symbols-outlined {
+    font-size: 24px;
+}
+
+button:hover {
+    background-color: var(--button-bg-color);
+    color: var(--button-text-color);
+}
+
+.clock {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: var(--text-color);
+}
+
