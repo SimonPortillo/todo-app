@@ -66,9 +66,14 @@ function renderTodos(filter = '') {
                  toggleComplete(index);
              });
 
+             const dragIndicator = document.createElement('button');
+             dragIndicator.innerHTML = '<span class="material-symbols-outlined">drag_indicator</span>';
+             dragIndicator.className = 'drag-indicator';
+
              buttonsContainer.appendChild(editButton);
              buttonsContainer.appendChild(deleteButton);
              buttonsContainer.appendChild(completeButton);
+             buttonsContainer.appendChild(dragIndicator);
 
              header.appendChild(span);
              header.appendChild(buttonsContainer);
@@ -215,3 +220,21 @@ renderTodos();
 enableDragAndDrop();
 setInterval(updateClock, 1000);
 updateClock();
+
+function randomizeColorScheme() {
+    const schemes = [
+        'scheme-1',
+        'scheme-2',
+        'scheme-3',
+        'scheme-4',
+        // Add more schemes as needed
+    ];
+    const randomScheme = schemes[Math.floor(Math.random() * schemes.length)];
+    document.documentElement.style.setProperty('--background-color', getComputedStyle(document.documentElement).getPropertyValue(`--${randomScheme}-background-color`));
+    document.documentElement.style.setProperty('--text-color', getComputedStyle(document.documentElement).getPropertyValue(`--${randomScheme}-text-color`));
+    document.documentElement.style.setProperty('--border-color', getComputedStyle(document.documentElement).getPropertyValue(`--${randomScheme}-border-color`));
+    document.documentElement.style.setProperty('--button-bg-color', getComputedStyle(document.documentElement).getPropertyValue(`--${randomScheme}-button-bg-color`));
+    document.documentElement.style.setProperty('--button-text-color', getComputedStyle(document.documentElement).getPropertyValue(`--${randomScheme}-button-text-color`));
+    document.documentElement.style.setProperty('--button-hover-bg-color', getComputedStyle(document.documentElement).getPropertyValue(`--${randomScheme}-button-hover-bg-color`));
+    document.documentElement.style.setProperty('--description-color', getComputedStyle(document.documentElement).getPropertyValue(`--${randomScheme}-description-color`));
+}
