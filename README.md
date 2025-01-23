@@ -10,7 +10,4 @@
 7. **Toggle color themes**
 8. **Clear Completed Items**
 ---
-![image](https://github.com/user-attachments/assets/bd5b6abf-70be-4526-bf98-abb8e8b3d2c0)
-![image](https://github.com/user-attachments/assets/c7ab0969-e72b-46a9-8fd4-fa066f7f8aa6)
-![image](https://github.com/user-attachments/assets/30fe8b96-cc2a-4312-99da-2f015c080e04)
-
+![ezgif-1-e6746e795c](https://github.com/user-attachments/assets/4a3bf2d9-ac61-43ee-8038-48a6281abfb8)
