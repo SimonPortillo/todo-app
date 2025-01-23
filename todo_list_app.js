@@ -238,3 +238,19 @@ function randomizeColorScheme() {
     document.documentElement.style.setProperty('--button-hover-bg-color', getComputedStyle(document.documentElement).getPropertyValue(`--${randomScheme}-button-hover-bg-color`));
     document.documentElement.style.setProperty('--description-color', getComputedStyle(document.documentElement).getPropertyValue(`--${randomScheme}-description-color`));
 }
+
+function randomizeFont() {
+    const fonts = [
+        'font-family-1',
+        'font-family-2',
+        'font-family-3',
+        'font-family-4',
+        'font-family-5',
+        'font-family-6',
+        'font-family-7',
+        'font-family-8',
+        // Add more fonts as needed
+    ];
+    const randomFont = fonts[Math.floor(Math.random() * fonts.length)];
+    document.documentElement.style.setProperty('--font-family', getComputedStyle(document.documentElement).getPropertyValue(`--${randomFont}`));
+}

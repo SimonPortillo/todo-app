@@ -42,6 +42,17 @@
     --scheme-4-description-color: #1976D2;
 
     /* Add more schemes as needed */
+
+    /* Predefined Font Styles */
+    --font-family-1: 'Varela Round', serif;
+    --font-family-2: 'Roboto Slab', serif;
+    --font-family-3: 'Arial', sans-serif;
+    --font-family-4: 'Courier New', monospace;
+    --font-family-5: 'Lobster', cursive;
+    --font-family-6: 'Pacifico', cursive;
+    --font-family-7: 'Montserrat', sans-serif;
+    --font-family-8: 'Open Sans', sans-serif;
+    /* Add more fonts as needed */
 }
 
 /* Dark Theme Variables */
@@ -89,21 +100,49 @@ body.dark-mode {
     /* Add more schemes as needed */
 }
 
-html {
-    font-family: "Varela Round", serif;
-    font-weight: 400;
-    font-style: normal;
-}
-
 body {
     margin: 20px;
-    font-family: inherit;
+    font-family: var(--font-family, var(--font-family-1)); /* Default font */
     background-color: var(--background-color);
     color: var(--text-color);
 }
 
+#top-buttons {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 20px;
+}
+
+#toggle-dark-mode {
+    margin-left: 5px;
+    background-color: transparent;
+    color: var(--button-bg-color);
+    border: none;
+    
+    padding: 10px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+#toggle-dark-mode:hover {
+    color: var(--button-hover-bg-color);
+}
+
+.randomize-font-button {
+    position: absolute;
+    left: 50%;
+    top: 40px;
+    transform: translateX(-50%);
+    background-color: transparent;
+    color: var(--button-bg-color);
+    border: none;
+    padding: 10px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.randomize-font-button:hover {
+    color: var(--button-hover-bg-color);
+}
 .todo-container {
-    padding-top: 100px;
+    padding-top: 25px;
     max-width: 600px;
     margin: 0 auto;
     font-family: inherit;
@@ -112,7 +151,9 @@ body {
 
 .todo-container h1 {
     text-align: center; /* Ensure the heading is centered */
-    margin-bottom: 20px; /* Added margin-bottom for spacing */
+    font-weight: 700;
+    letter-spacing: 6px;
+    margin-bottom: 40px; /* Increased margin-bottom for more spacing */
 }
 
 .todo-input, .search-bar {
@@ -142,7 +183,7 @@ body {
     display: flex;
     align-items: center;
     width: 80%;
-    margin: 20px auto 10px auto; /* Added top margin for vertical spacing */
+    margin: 20px auto 35px auto; /* Increased bottom margin for more spacing */
 }
 
 .input-with-button .todo-input {
@@ -209,7 +250,7 @@ body {
 }
 
 .todo-item:hover {
-    scale: 1.02;
+    scale: 1.05;
 }
 
 .todo-item .description {
@@ -263,14 +304,12 @@ body {
     border: none;
     border-radius: 50%;
     padding: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .drag-indicator:hover {
     background-color: transparent; /* Remove hover effect */
+    color: var(--button-hover-bg-color);
 }
 
 .completed {
@@ -304,7 +343,8 @@ button:hover {
 
 .clock {
     font-size: 2em;
-    margin-bottom: 20px;
+    letter-spacing: 12px;
+    margin-bottom: 30px;
     color: var(--text-color);
 }
 
@@ -323,6 +363,32 @@ button:hover {
 .randomize-button:hover {
     background-color: var(--button-hover-bg-color);
     color: var(--button-text-color);
+}
+
+/* Separator */
+.separator {
+    border: none;
+    border-top: 2px solid var(--border-color);
+    margin: 35px;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    border-top: 1px solid var(--border-color);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer .material-symbols-outlined {
+    font-size: 24px;
+    vertical-align: middle;
+    margin-bottom: 2px;
+    margin-right: 0px; /* Add some space between the icon and the text */
 }
 
 

@@ -7,16 +7,28 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="stylesheet.css">
     <title>To-Do List</title>
 </head>
 <body>
-    <div class="top-buttons">
+    <div id="top-buttons">
+        <button class="randomize-button" onclick="randomizeColorScheme()">Color Scheme</button>
         <button id="toggle-dark-mode">
             <span class="material-symbols-outlined">contrast</span>
         </button>
-        <button class="randomize-button" onclick="randomizeColorScheme()">Randomize Color Scheme</button>
     </div>
+    <button class="randomize-font-button" onclick="randomizeFont()">
+        <span class="material-symbols-outlined">glyphs</span>
+    </button>
+    
+
     <div class="todo-container">
         <div id="clock" class="clock"></div>
         <h1>To-Do List</h1>
@@ -27,8 +39,15 @@
                 <span class="material-symbols-outlined">add</span>
             </button>
         </div>
+        <hr class="separator"> <!-- Separator element -->
         <ul id="todo-list" class="todo-list"></ul>
     </div>  
+    <footer class="footer">
+        <p>
+            <span class="material-symbols-outlined">fingerprint</span>
+            Created by <strong>Simon Portillo</strong>
+        </p>
+    </footer>
     <script src="todo_list_app.js"></script>
 </body>
 </html>
