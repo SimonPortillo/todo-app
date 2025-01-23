@@ -19,27 +19,34 @@
 </head>
 <body>
     <div id="top-buttons">
-        <button class="randomize-button" onclick="randomizeColorScheme()">Color Scheme</button>
+        <button class="randomize-button" onclick="randomizeColorScheme()">
+            <span class="material-symbols-outlined">palette</span>
+        </button>
+        <button class="randomize-font-button" onclick="randomizeFont()">
+            <span class="material-symbols-outlined">glyphs</span>
+        </button>
         <button id="toggle-dark-mode">
             <span class="material-symbols-outlined">contrast</span>
         </button>
     </div>
-    <button class="randomize-font-button" onclick="randomizeFont()">
-        <span class="material-symbols-outlined">glyphs</span>
-    </button>
-    
-
+   
     <div class="todo-container">
         <div id="clock" class="clock"></div>
         <h1>To-Do List</h1>
-        <input id="search-input" class="todo-input" type="text" placeholder="Search...">
-        <div class="input-with-button">
-            <input id="todo-input" class="todo-input" type="text" placeholder="Add a new to-do">
-            <button id="add-button">
-                <span class="material-symbols-outlined">add</span>
-            </button>
+        
+        <div id="input-fields" class="input-fields">
+            <input id="search-input" class="todo-input" type="text" placeholder="Search...">
+            <div class="input-with-button">
+                <input id="todo-input" class="todo-input" type="text" placeholder="Add a new to-do">
+                <button id="add-button">
+                    <span class="material-symbols-outlined">add</span>
+                </button>
+            </div>
         </div>
         <hr class="separator"> <!-- Separator element -->
+        <button id="toggle-input-fields" class="toggle-input-fields">
+            <span class="material-symbols-outlined">expand_less</span>
+        </button>
         <ul id="todo-list" class="todo-list"></ul>
     </div>  
     <footer class="footer">

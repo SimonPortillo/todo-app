@@ -105,48 +105,66 @@ body {
     font-family: var(--font-family, var(--font-family-1)); /* Default font */
     background-color: var(--background-color);
     color: var(--text-color);
+    text-align: center; /* Center the content */
+    min-height: 100vh;
+    padding-bottom: 100px; /* Add padding to prevent footer overlap */
+    box-sizing: border-box;
 }
 
 #top-buttons {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
+    gap: 100px; 
     margin-bottom: 20px;
 }
 
-#toggle-dark-mode {
-    margin-left: 5px;
+#top-buttons button {
+    margin: 20px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
     background-color: transparent;
     color: var(--button-bg-color);
-    border: none;
-    
-    padding: 10px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-#toggle-dark-mode:hover {
-    color: var(--button-hover-bg-color);
-}
-
-.randomize-font-button {
-    position: absolute;
-    left: 50%;
-    top: 40px;
-    transform: translateX(-50%);
-    background-color: transparent;
-    color: var(--button-bg-color);
-    border: none;
-    padding: 10px;
+    cursor: pointer;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.randomize-font-button:hover {
+#top-buttons button:hover {
     color: var(--button-hover-bg-color);
+    background-color: transparent;
 }
+#top-buttons button span.material-symbols-outlined {
+    font-size: 32px; /* Increase the icon size */
+}
+
+.toggle-input-fields {
+    margin: 20px auto; /* Center the button */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: transparent;
+    color: var(--button-bg-color);
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.toggle-input-fields:hover {
+    color: var(--button-hover-bg-color);
+    background-color: transparent;
+}
+
+.input-fields.collapsed {
+    display: none;
+}
+
 .todo-container {
     padding-top: 25px;
     max-width: 600px;
-    margin: 0 auto;
+    width: 100%; /* Ensure the container takes full width */
+    margin: 0 auto; /* Center the container */
     font-family: inherit;
     text-align: center; /* Center the heading */
+    padding-bottom: 80px; /* Add padding to prevent footer overlap */
 }
 
 .todo-container h1 {
@@ -348,28 +366,11 @@ button:hover {
     color: var(--text-color);
 }
 
-/* Randomize Button */
-.randomize-button {
-    margin: 20px;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    background-color: var(--button-bg-color);
-    color: var(--button-text-color);
-    cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.randomize-button:hover {
-    background-color: var(--button-hover-bg-color);
-    color: var(--button-text-color);
-}
-
 /* Separator */
 .separator {
     border: none;
     border-top: 2px solid var(--border-color);
-    margin: 35px;
+    margin: 5px;
 }
 
 /* Footer */
@@ -384,11 +385,15 @@ button:hover {
     width: 100%;
 }
 
+.footer p {
+    margin-right: 70px;
+}
+
 .footer .material-symbols-outlined {
     font-size: 24px;
     vertical-align: middle;
-    margin-bottom: 2px;
     margin-right: 0px; /* Add some space between the icon and the text */
+    margin-bottom: 4px; /* Add some space between the icon and the text */
 }
 
 

@@ -12,6 +12,15 @@ toggleDarkModeButton.addEventListener('click', () => {
     document.body.classList.toggle('dark-mode');
 });
 
+// Toggle input fields visibility
+const toggleInputFieldsButton = document.getElementById('toggle-input-fields');
+const inputFields = document.getElementById('input-fields');
+toggleInputFieldsButton.addEventListener('click', () => {
+    inputFields.classList.toggle('collapsed');
+    const icon = toggleInputFieldsButton.querySelector('span.material-symbols-outlined');
+    icon.textContent = inputFields.classList.contains('collapsed') ? 'expand_more' : 'expand_less';
+});
+
 // Load to-dos from local storage
 function loadTodos() {
     const todos = localStorage.getItem('todos');
